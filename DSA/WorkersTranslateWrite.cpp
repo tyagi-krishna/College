@@ -18,3 +18,9 @@ int price(vector<int> workers, vector<int> coins) {
     }
     return bothMin > transMin + writeMin ? transMin + writeMin : bothMin;
 }
+int main() {
+    vector<int> workers = {1, 2, 1, 1, 1, 3, 2, 2, 1};
+    vector<int> coins = {12, 1, 1, 323, 34, 2, 32, 43, 3};
+    cout << price(workers, coins) << endl;
+    return 0;
+}
