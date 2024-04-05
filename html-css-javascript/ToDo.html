@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Add Element</title>
+        <script>
+            let count = 0;
+            function add() {
+                parent = document.createElement('div');
+                parent_Id = 'p' + (++count);
+                parent.setAttribute('id', parent_Id);
+                console.log(task.value);
+                val = document.createElement('p');
+                val.innerText = task.value;
+                parent.appendChild(val);
+                dt = document.createElement('p');
+                dt.innerText = task_date.value;
+                parent.appendChild(dt);
+                bt = document.createElement('button');
+                parent.appendChild(bt);
+                bt.innerText= 'Delete';
+                bt.setAttribute('onclick', `remove(${parent_Id})`);
+                document.getElementById('tasks').appendChild(parent);
+
+            }
+            function remove(id) {
+                alert("remove");
+                id.remove();
+            }
+            
+        </script>
+	</head>
+	<body>
+		<input type="text" id="task"></input>
+        <input type="date" id="task_date"></input>
+        <button onclick="add()">Submit</button>
+        <h1>Tasks</h1>
+        <div id="tasks"></div>
+        
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Add Element</title>
+        <script>
+            function add() {
+            console.log(number.value);
+            ele = document.createElement('td');
+            ele.innerText = number.value;
+            if(number.value %2 == 0) {
+                document.getElementById('table1').appendChild(ele);
+            }
+            else {
+                document.getElementById('table2').appendChild(ele);
+            }
+
+        }
+        </script>
+	</head>
+	<body>
+		<input type="text" id="number"></input>
+        <button onclick="add()">Submit</button>
+        <br>
+        <table >
+            <thead>Even</thead>
+            <tbody id="table1"></tbody>
+        </table>
+        <br>
+        <table id="'table2">
+            <thead>Odd</thead>
+            <tbody id="table2"></tbody>
+        </table>
+	</body>
+</html>
