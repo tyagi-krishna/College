@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>search company</title>
+        <style>
+            header {searchWord = document.getElementById('search').value;
+            window.location.href = `https://query1.finance.yahoo.com/v8/finance/chart/${searchWord}.NS`;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-style: italic;
+                font-size: 45px;
+                text-align: center;
+            }
+            #search {
+                text-align: center;
+            }
+            form {
+                text-align: center;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded' , function() {
+                document.querySelector('#foo').onclick = function() {
+                    searchword = document.querySelector('#comapny').value;
+                    fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${searchword}.NS`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const p = data['symbol'];
+                        document.querySelector('h1').innerHTML = searchword;});
+                    return false;
+                };
+            })
+        </script>
+    </head>
+    <body>
+        <header>
+            Stocks_Verse 
+        </header>
+        <hr>
+        <div id="search">
+            <a href="http://127.0.0.1:8000/">Home</a>
+            <a href="http://127.0.0.1:8000/search">Search</a>
+            <a href="">About</a>
+            <a href="">Credits</a>
+        </div> 
+        <hr>
+        <form>
+            <input id="comapny" name="search" type="text" class="query-search" placeholder="Search...">
+            <input id='foo' type="submit" value = "View Details"/>
+        </form>
+        <h1>Symbol</h1>
+        <hr>
+        <table>
+            <tr>
+                <td>Currency</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+            </tr>
+            <tr>
+                <td>Currency</td>
+            </tr>
+        </table>
+        <hr>
+    </body>
+</html>

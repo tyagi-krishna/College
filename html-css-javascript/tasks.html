@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <title>Tasks</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('#submit').disabled = true;
+                document.querySelector('#task').onkeyup = function() {
+                    document.querySelector('#submit').disabled = false;
+                }
+                document.querySelector('form').onsubmit = function() {
+                    const task = document.querySelector('#task').value; 
+                    const li = document.createElement('li');
+                    document.querySelector('#submit').disabled = true;
+                    li.innerHTML = task;
+                    document.querySelector('#tasks').append(li);
+                    return false;
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <h1>Hello!</h1>
+        <ul id="tasks">
+        </ul>
+        <form>
+            <input id="task" placeholder="new task" type="text">
+            <input id="submit", type="submit"> 
+        </form>
+    </body>
+</html>

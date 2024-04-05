@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Currency</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector('form').onsubmit = function() {
+                    fetch('https://api.exchangeratesapi.io/latest?base=USD')
+                    .then(response => response.json())
+                    .then(data => {
+                        const currency = document.querySelector('#currency').value;
+                        const rate = data.rates[currency];
+                        document.querySelector('body').innerHTML = '1 USD is equal to ${rate}'
+                    });
+                    return false;
+                }
+                
+                });
+        </script>
+    </head>
+    <body>
+        <form>
+            <input  id="currency" placeholder="currency" type="text">
+            <input type="submit" value="conevrt">
+        </form>
+        <div id="result">result</div>
+    </body>
+</html>

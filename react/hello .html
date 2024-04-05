@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <title>Hello!</title>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/babel">
+            function Hello() {
+                return (
+                    <h1>Hello</h1>
+                )
+            }
+            function APP() {
+                const x=1;
+                const y=4;
+                return (
+                    <div>Hello, {x+y}
+                        <Hello />
+                        <Hello />
+                    </div>
+                );
+            }
+            ReactDOM.render(<APP />, document.querySelector('#app'));
+        </script>
+    </body>
+</html>
