@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 #include<queue>
+#include<stack>
 
 class TreeNode {
     public:
@@ -39,6 +40,20 @@ void postorder(TreeNode* root) {
     cout << root;
 }
 
+// Depth First Search with Stack
+void DFS(TreeNode* root) {
+    stack<TreeNode *> st;
+    st.push(root);
+    while(!st.empty()) {
+        TreeNode *current = st.top();
+        st.pop();
+        cout << current->val << endl;
+        if (current->left)
+            st.push(current->left);
+        if (current->right)
+            st.push(current->right);
+    }
+}
 
 // Breadth first search
 void BFS(TreeNode* root) {
