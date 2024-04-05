@@ -21,7 +21,7 @@ int main() {
     BST bst;
     bst.addNode(2);
     bst.addNode(3);
-    bst.addNode(1);
+    bst.addNode(0);
     bst.traverse();
     cout<<"Search Result for 3 are "<<bst.search(3)<<endl;
     cout<<"Search Result for 4 are "<<bst.search(4)<<endl;
